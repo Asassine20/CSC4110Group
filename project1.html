@@ -6,46 +6,79 @@
     <title>Group One Homepage</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
-        .header {
+        :root {
+            --color-primary: #191d2b;
+            --color-secondary: #27AE60;
+            --color-white: #ffffff;
+            --color-black: #000;
+            --color-grey0: #f8f8f8;
+            --color-grey-1: #dbe1e8;
+            --color-grey-2: #b2becd;
+            --color-grey-3: #6c7983;
+            --color-grey-4: #454e56;
+            --color-grey-5: #2a2e35;
+            --color-grey-6: #12181b;
+            --br-sm-2: 14px;
+            --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+        }
+
+        body {
+            background-color: var(--color-primary);
+            font-family: "Poppins", sans-serif;
+            font-size: 1.1rem;
+            color: var(--color-white);
+            transition: all 0.4s ease-in-out;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            color: inherit;
+            font-family: inherit;
+        }
+
+        /* Additional styles for navbar and header */
+        .navbar {
+            background-color: var(--color-grey-5);
+            border-bottom: 2px solid var(--color-secondary);
+        }
+        .navbar-brand, .nav-link {
+            color: var(--color-white) !important;
+        }
+        .nav-link:hover {
+            color: var(--color-secondary) !important;
+        }
+
+        /* Header logo styling */
+        .header-logo {
             text-align: center;
-            margin-top: 20px;
+            margin: 20px 0;
         }
-        .team-logo {
-            width: 100px; 
+        .header-logo img {
+            width: 200px; /* Adjust the width as needed */
             height: auto;
-        }
-        .navbar:hover {
-            cursor: pointer;
-        }
-        .current {
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <!--Bootstrap styling to make the navbar have a grey tone color -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="home.html">Home</a>
-            <div class="collapse navbar-collapse">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
-                    <!--Creates a link element for a page-->
                     <li class="nav-item">
-                        <!--Link to project 1 also makes the page thats selected bold-->
                         <a class="nav-link" href="project1.html" style="font-weight: bold;">Project 1</a>
-                    </li>
-                    <!--Creates a link element for a page-->                    
+                    </li>                  
                     <li class="nav-item">
-                        <!--Link to project 2-->
                         <a class="nav-link" href="project2.html">Project 2</a>
                     </li>
-                    <!--Creates a link element for a page-->
                     <li class="nav-item">
-                        <!--Link to project 3-->
                         <a class="nav-link" href="project3.html">Project 3</a>
                     </li>
                     <li class="nav-item">
-                        <!--Link to user agreement-->
                         <a class="nav-link" href="UserAgreement.html">User Agreement</a>
                     </li>
                 </ul>
@@ -53,13 +86,15 @@
         </div>
     </nav>
     <div class="container mt-4">
-        <!--Creates a large "container" to store the content of the div-->
-        <div class="jumbotron">
+        <div class="jumbotron" style="background-color: var(--color-grey-5); color: var(--color-white);">
             <h1 class="display-4">Project 1: Data Storage</h1>
             <p>This code allows the user to utilize Python programming language to add, store, and retrieve data from a data set. 
                 The data set is part of ForestView's SafeZone proposal to key customers.</p>
-            <!--Creates a button element so the user can quickly find what to click to download the code-->
             <a href="project1.zip" class="btn btn-primary">Download backend code</a>
         </div>
     </div>
-    
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
