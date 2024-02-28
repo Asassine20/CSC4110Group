@@ -1,0 +1,456 @@
+X-MS-Exchange-Organization-InternalOrgSender: False
+Received: from CYZPR17CA0002.namprd17.prod.outlook.com (2603:10b6:930:8c::24)
+ by LV2PR11MB6047.namprd11.prod.outlook.com (2603:10b6:408:179::16) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7339.10; Wed, 28 Feb
+ 2024 01:43:46 +0000
+Received: from CY4PEPF0000FCC0.namprd03.prod.outlook.com
+ (2603:10b6:930:8c:cafe::a8) by CYZPR17CA0002.outlook.office365.com
+ (2603:10b6:930:8c::24) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.7339.27 via Frontend
+ Transport; Wed, 28 Feb 2024 01:43:45 +0000
+Authentication-Results: spf=pass (sender IP is 17.57.156.7)
+ smtp.mailfrom=icloud.com; dkim=pass (signature was verified)
+ header.d=icloud.com;dmarc=pass action=none header.from=icloud.com;
+Received-SPF: Pass (protection.outlook.com: domain of icloud.com designates
+ 17.57.156.7 as permitted sender) receiver=protection.outlook.com;
+ client-ip=17.57.156.7; helo=ci74p00im-qukt09081702.me.com; pr=C
+Received: from ci74p00im-qukt09081702.me.com (17.57.156.7) by
+ CY4PEPF0000FCC0.mail.protection.outlook.com (10.167.242.102) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7292.25 via Frontend Transport; Wed, 28 Feb 2024 01:43:45 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
+	s=1a1hai; t=1709084625;
+	bh=wVyVY0rCK+ha3O3eZ1GTRG2c90Ih5cyr0uYnofJmEjw=;
+	h=From:Content-Type:Mime-Version:Subject:Message-Id:Date:To;
+	b=PjD6eLkOUXdhpWbXw8I7Wx70IcMq73R75M3ViRjfWzHYWseShNr03odBl3K/yf1Fg
+	 PBJgKcC9ZIFHKpdqElyPRIuOKG2dUySCnU/fT2uVNd6Ai1OeU0BG4pqMuw2eQVwZSe
+	 2fmSufhQij1VwTyu7X9Io56yPQuzVZkwvZPT0Lh4klMxqzSbeV3qLEYM9ZNhWmYx0q
+	 0vaMW6Z1H9U0qY82iVEwmv+q/eHyJa9w1l+4SkpSDkjGL1ygmFIc4P/UEiuzN5hUAF
+	 oFzRsHc4I2yXuyq+IqIGnegzSPKRw6xfasSIm8FN78ZjPFTm8IhSdh5qFc8DP6q+Jb
+	 ehWwkjm/dMqtQ==
+Received: from smtpclient.apple (ci77p00im-dlb-asmtp-mailmevip.me.com [17.57.156.26])
+	by ci74p00im-qukt09081702.me.com (Postfix) with ESMTPSA id 752803BC02F6
+	for <hc8094@wayne.edu>; Wed, 28 Feb 2024 01:43:44 +0000 (UTC)
+From: Paul Shamoon <paul_shamoon@icloud.com>
+Content-Type: multipart/mixed;
+	boundary="Apple-Mail=_D7F678FD-5F9E-498D-87B7-E75695E8ECAE"
+Subject: project 2 code
+Message-Id: <CC5AFC7A-BF52-4137-A997-89FEC6216584@icloud.com>
+Date: Tue, 27 Feb 2024 20:43:32 -0500
+To: hc8094@wayne.edu
+X-Mailer: Apple Mail (2.3774.400.31)
+X-Proofpoint-ORIG-GUID: QqVROl7uLgw0MRlQuDaxUXwTqjGWPiOP
+X-Proofpoint-GUID: QqVROl7uLgw0MRlQuDaxUXwTqjGWPiOP
+X-Proofpoint-Virus-Version: vendor=baseguard
+ engine=ICAP:2.0.272,Aquarius:18.0.1011,Hydra:6.0.619,FMLib:17.11.176.26
+ definitions=2024-02-28_01,2024-02-27_01,2023-05-22_02
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 spamscore=0 mlxlogscore=634 mlxscore=0
+ bulkscore=0 malwarescore=0 suspectscore=0 clxscore=1011 phishscore=0
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.19.0-2308100000 definitions=main-2402280012
+Return-Path: paul_shamoon@icloud.com
+X-MS-Exchange-Organization-OriginalArrivalTime: 28 Feb 2024 01:43:45.6103
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTime: 28 Feb 2024 01:43:45.6884
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id:
+ 62c6f5c3-d0c1-4802-ed03-08dc37feb3c2
+X-MS-Exchange-Organization-OriginalClientIPAddress: 17.57.156.7
+X-MS-Exchange-Organization-OriginalServerIPAddress: 10.167.242.102
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: e51cdec9-811d-471d-bbe6-dd3d8d54c28b:0
+X-MS-Exchange-Organization-TargetResourceForest: namprd11.prod.outlook.com
+X-MS-Exchange-Organization-OrgEopForest: NAM04
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-Exchange-Organization-Id: e51cdec9-811d-471d-bbe6-dd3d8d54c28b
+X-MS-Exchange-Organization-FFO-ServiceTag: NAM04B
+X-MS-Exchange-Organization-Cross-Premises-Headers-Processed:
+ CY4PEPF0000FCC0.namprd03.prod.outlook.com
+X-MS-Exchange-Organization-ConnectingIP: 17.57.156.7
+X-MS-Exchange-Organization-ConnectingEHLO: ci74p00im-qukt09081702.me.com
+X-MS-Exchange-Organization-AS-LastExternalIp: 17.57.156.7
+X-MS-Exchange-Organization-IsBipIncludedAtpTenant: true
+X-MS-Exchange-Organization-IsAtpTenant: true
+X-MS-Exchange-Organization-Originating-Country: US
+X-MS-Exchange-Organization-OriginalEnvelopeRecipients: hc8094@wayne.edu
+X-MS-Exchange-Organization-PtrDomains: ci74p00im-qukt09081702.me.com
+X-MS-Exchange-Organization-EhloAndPtrDomain:
+ ci74p00im-qukt09081702.me.com;ci74p00im-qukt09081702.me.com
+X-MS-Exchange-Organization-MxPointsToUs: true
+X-MS-Exchange-Organization-RecipientDomainMxRecord-PFAFD:
+ wayne.edu#wayne-edu.mail.protection.outlook.com
+X-MS-Exchange-Organization-RecipientDomainMxInfo:
+ wayne.edu#Office365#wayne-edu.mail.protection.outlook.com
+X-MS-Exchange-Organization-CompAuthRes: pass
+X-MS-Exchange-Organization-CompAuthReason: 100
+X-MS-Exchange-Organization-SpoofDetection-Frontdoor-DisplayDomainName:
+ icloud.com
+X-MS-Exchange-Organization-SenderRep-Score: 3
+X-MS-Exchange-Organization-SenderRep-Data:
+ IpClassLargeGrayOther_GrayOther_GrayOther
+X-MS-Exchange-Organization-VBR-Class: GrayOther
+X-MS-Exchange-Organization-HMATPModel-Spf: 1
+X-MS-Exchange-Organization-HMATPModel-Recipient:
+ <PII:H101(ZzZUNJRqt7ApW2RnWxJbOyUgURFuADQM813eFZ46A0c=)>@wayne.edu
+X-MS-Exchange-Organization-TransportTrafficType: Email
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: CY4PEPF0000FCC0:EE_|LV2PR11MB6047:EE_
+X-MS-Exchange-Organization-OrderedPrecisionLatencyInProgress:
+ LSRV=CYZPR17CA0002.namprd17.prod.outlook.com:TOTAL-FE=0.019|;2024-02-28T01:43:45.826Z
+X-MS-Exchange-Organization-MessageLatency:
+ SRV=CY4PEPF0000FCC0.namprd03.prod.outlook.com:TOTAL-FETI=0.196|SMR-PEN=0.200(REOH=0.191(SMREH=0.106(SMREH-Protocol
+ Filter Agent=0.105)))
+X-MS-Exchange-Forest-ArrivalHubServer: LV2PR11MB6047.namprd11.prod.outlook.com
+X-MS-Exchange-Organization-AuthSource:
+ CY4PEPF0000FCC0.namprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-FromEntityHeader: Internet
+X-MS-Exchange-Organization-MessageScope: abc05024-89b4-4a24-9651-ee088e2e6893
+X-MS-Exchange-Forest-MessageScope: abc05024-89b4-4a24-9651-ee088e2e6893
+X-MS-Exchange-Organization-Antispam-ProtocolFilterHub-ScanContext:
+ ProtocolFilterHub:SmtpOnEndOfData;
+X-MS-Office365-Filtering-Correlation-Id: 62c6f5c3-d0c1-4802-ed03-08dc37feb3c2
+X-MS-Exchange-Organization-P2SenderDisplayNamePII:
+ H101(izrynp6vTGEUbYI06GsZQjR1AXUUK0uYvZNepndFa1E=)
+X-MS-Exchange-Organization-P2SenderPII:
+ <PII:H101(3VwxiNJqJyUQI91sRRM8GaSmmFyCpDt82ZfuPIVmu6c=)>@icloud.com
+X-MS-Exchange-Organization-Auth-DmarcStatus: Pass
+X-MS-Exchange-Organization-VerifiedDkimDomainsList: icloud.com
+X-MS-Exchange-Organization-Antispam-AuthResults:
+ {"SpfDomain":"icloud.com","SpfAuthStatus":"Pass","DkimDomain":"icloud.com","DkimAuthStatus":"Pass","DkimSubStatus":"None","DmarcAuthStatus":"Pass","DmarcAction":"None","ArcAuthStatus":"0","ArcSubStatus":"0"}
+X-MS-Exchange-Organization-PFAHub-Total-Message-Size: 13772
+X-MS-Exchange-Organization-OriginalSize: 13772
+X-MS-Exchange-Organization-HygienePolicy: Premium
+X-MS-Exchange-Organization-ReplicationInfo:
+ ReplicaId=ca3c108f-c866-4b3c-2b8c-1eb4fe37dc08;ReplicatingServerFqdn=MN0PR11MB6035.namprd11.prod.outlook.com
+X-MS-Exchange-Forest-Language: en
+X-MS-Exchange-Forest-IndexAgent-0:
+ AQ0CZW4BH+QBW3sNCiAgImluZGV4IjogMCwNCiAgIkF0dGFjaG1lbn
+ RQcm9wZXJ0aWVzIjogew0KICAgICJleHRlbnNpb24iOiAicHkiLA0K
+ ICAgICJ1cmxzIjogW10sDQogICAgImlubmVyRmlsZXMiOiBbXSwNCi
+ AgICAiZGV0ZWN0ZWRGb3JtYXQiOiAidHh0IiwNCiAgICAibmFtZSI6
+ ICJzbmFrZSIsDQogICAgInR5cGUiOiAiU3RyZWFtQXR0YWNobWVudC
+ IsDQogICAgImZyb21DYWNoZSI6IGZhbHNlDQogIH0NCn1dAAF0BwAA
+ DwAAAx+LCAAAAAAABAClWOtv01YUv27iOEnTFy0wpH24GGk4Io2Sak
+ JatSBNUDEkYBItH1hVWW5yk3g4dmY7KxXi0/7xnXOuHb9LB1Xl3sfP
+ 557zO4973H8f2oul54fct9yJt9hqR9PQXohksvJDB6Zb7bFjBQE/da
+ 2P4qW1EMdbbQ4/jx8/Tta4xPhi6YtAuGHAw7ngC8t2+Qy3HW9mj/nU
+ 87kl3w7gFEdIARJCCwt4V0z4KrDdGYk4Iy34wpusUJnoYNQKh6cnL9
+ +cvD0zT1/9ecJH/Gggl1+cvP7tA8wH/WG08OrdyfOzV3+8PYXVz/pq
+ qR9zY9DLvN/tcQnO/ugT78qN4Ie3wTtiGiI+A+7xQRXet2dzeiGP/x
+ JbORFTbpq2a4emaQTCmXaPE0k4718Bz6PIY/3TsS+Ea3SLmH5oA8DQ
+ JevoN70MdTkbe47nG/oMBZVCAhGulsaVPQnno6cDoGYu0Awcl57rW2
+ PhG7iX250LawKq0xj0tkJhSjMMPfh7ZflC73H9am6HRVXx1f7E9sU4
+ tD20Xw9Cb6lznsNNPS9/BC4VCArEbEGhO+LnF/m9secLjKi8DmC1Wb
+ VJ6+bEDpaOdZ3TILNnFHlB1hw7CCsc6bkfxTXmWmA41uJyYh1H0ueW
+ O0O5ESsGxjpEnv5+WerH28uhNEBJL2jwXbIoRVDWaxp8lyyZPijsnR
+ ylsyYbUSihx4O5tRQ9TiEOs9DyQ3PpBSNM8EE3nVryNdO7/CtJLlmP
+ 0j5JUP1gKcTEGFRs4rkGPcsBMunoWQ5YCheSrnxv5oWesTYmhfEhU3
+ 03BS3hh9IhX1iiF8syc2z7Y4cy0xcT+GPIe6SPf2w3NA6PfgEy4QFu
+ qdzqlnkqmxaFWndDQlVVjR5V7qOng263QhAk8USEBb/G9qehGY3zoS
+ jDaz1PK25Py0vWumbBxUiA5KLqz0RoJML4wxFcKTnMeYnQi/PBBdxU
+ t0IOL9JKJkUtX1jX47T9C+8fUfDQI/4GlrnnOtdodCLEDkB2+FVGHs
+ aMVOoFUiDAjWQBZ13+JM9fqcXZkJuL8UcT8g3qbOy/nNOsy/RJnyAU
+ jG6XP8P4RZdlt68L2y6GMF0qoAMkpzsWCb7Lf5U6Z5qYKUUCvcNtN3
+ sxlToL+63QxA7KyFi3Wk7WCVVmWpqetGpYC0pVKzscwbL0fFMFKJEY
+ 29q3llDuZFWqTnFoUK71UjmyBTzEHnAwGJYdRJf2kxEfDrK7MTcS8C
+ x/z+doSIIz3QkkAkpOTnum2AHkfVddDAstRh+KsuUX+5oM5sqHqggt
+ INnCP3/h/HfQnK/nOjjVX1ihkbzby1sITrUce+aO9DH2677eK+tsk5
+ +p54YjQ3/urXwb0fzoZ3Cei+c4evYeSIVz3mD8OukHjhBLY1jaC1Ig
+ 0i1+u04xQd2UdYW4lwlNhw0H2Pvis6qZvJVPbsCUtJVV8ZMBfXdmFq
+ MxsqiymFQQhtza7kR8QmZ9vDMNR7hGtrLxQz4Ex8HFNcxXuQKl5yTt
+ Imp5ijso60JeCzdVGLgnUyKSqyRjO3VUBYuhs4Bv0jN/la8GUY+avV
+ fKlMhU55sAMellGLqBcxupJEnqYA7ziL8n6dDb4Acev7LDOfgGP7cd
+ z1uWnIQtudRIFiobP0hdSFLTpCbGNPFT3zTja5s+6EfJvwdiLXG9Lz
+ ntMtZgWoM14VlnDRq3VdZosYMWDdpss8bqdabCL0xhrCBGgzGsbLKO
+ XKQX72sK67BmXdE2GNtgTVVp1hirsVab7WwoDYUxhdUiDPuxrjRppZ
+ 6ssFYsQYIfqPkVUAbOBVV3QY8mU2uRznfiaV2NdFsD6hprqWwvBWio
+ SoMUUxuKRoPt9S6s0EHbZDIcBBi2FVHURjlERYtt1aNxhNmUWjG1ye
+ 4jV5F1m4hRWDu7oqLMhsba8t0D0lljdxM1UhaBCxrIDyJ3mdZimxsM
+ GN6+AQBMphn4BoCKxu4QIdJ8DA/iVgPlW+B0RUVzlJqkq4E2amt3xN
+ O6Gjmuk6ygnN3q6d56LInCs0A+iI3WN6VWRDjwv9souKlGCmsKWATx
+ Kn3dKKxsSzkx+bC1m/NL4nelJY2lF3diWLPN7jWIEJpGdBGBIAGS6O
+ 4Gq8UBAxHVwKnC9pkq06pFAdOWQQIYZZO4UssW78RyOi22F6dktAhi
+ 4UR41thW9sQDOUaKUEkc18jRiXy2T25iO6gwqL1LcqKUryttMrl+wy
+ Lw0MRwgi2UHKezTL2m1KfJfpDebGNuRsx34lRd61wmZz86lKz4mk/3
+ pZBiSNQhuVABKAVMJRiMqUxFp6t0aJSqpG08btLufjZV94rBk8rrpi
+ wUqSnAKPEx0TQaaOkjVNTzpzqa0yatwNg96RdiTI3lR9kUOyKdg51U
+ adrJkn8fNVRUSRQ+2Y4kqqDnXq52pWz8X47YkvzsMI18urvWRKY8TO
+ XFgYtKJ7FCqZH592L1tHVgxFpByB3QWy05lTTGsb0t5WMu41M6Wsb2
+ A2kORd1dOSb1yNckU15qKiW1/CUN76TKcmcDwcAwJBekOdH1H/eW8C TJFwAA
+X-MS-Exchange-Forest-IndexAgent: 1 2151
+X-MS-Exchange-Forest-EmailMessageHash: 00000000,E92A3A33
+X-MS-Exchange-Organization-PhishSim-Rules-Execution-History:
+ 34936407-dbb0-4b70-a3cf-73f122368349
+X-MS-Exchange-Organization-Antispam-PreContentFilter-PolicyLoadTime:
+ PSOSUB:26;PSOSUBLOAD:23;PSOSUBRUN:1;PSOSUBCOUNT:1;SMORES:23;SMORESLOAD:21;SMORESRUN:0;SMORESCOUNT:1;SAORES:61;SAORESLOAD:12;SAORESRUN:0;SAORESCOUNT:4;SLORES:16;APORES:15;APORESLOAD:14;APORESRUN:0;APORESCOUNT:1;RSORES:11;SLORESLOAD:14;SLORESRUN:0;SLORESCOUNT:3;
+X-MS-Exchange-Organization-MessageFingerprint:
+X-MS-Exchange-Organization-AttachmentDetailsInfo-ChunkCount: 1
+X-MS-Exchange-Organization-AttachmentDetailsInfo-0:
+ [{"ID":0,"FS":4227,"SHA256":"095303d4c1c18f825bf54c79af9bfa77c983486e2cb2a94c5a94e5ea12674e1d","HFH":"CVMD1MHBj4Jb9Ux5r5v6d8mDSG4ssqlMWpTl6hJnTh0=","FE":"py","AF":0,"AFT":"{784:\"snake.py\",789:\"txt;text\"}","AFT2":"{784:\"snake.py\",789:\"txt;text\"}"}]
+X-MS-Exchange-Organization-EmailFingerprints:
+ {"VA11":"VA11_9717985F096E7DFD15C661A53C9C441775B35CC00DDE19DEA50A5575B52E25DF","VA31":"VA31_BC63C0692DCD0A3DFA04D4E8A024597B3B96D27B11B78C11C09A1A68DEC0CA06","VA30":"VA30_0CE6DBF9B6CCC253CCF82F6640ABA7E84087A013F4E901497D2040AC20F091F6","VA10":"VA10_68E51A297E7733F900ADD4DE671C3C869DFADF1408BA235B12A9D753369C5D9A","VA2":"VA2_B15F26155D8204AA458EB0A42E2ED58429202146B8C53FE777FF9B7524CFDE2D","VA1":"VA1_EF572FF14EA8905F028732B3C7415EC857C27EBB2FFD7832225EB5DCE4943147","VA0":"VA0_8804321041E2727BFE1AFA9664BE43F2062F375CC3EF426AE08352E4CA24D5F3"}
+X-MS-Exchange-Organization-FeatureTable:
+ {664:58,665:25,1010:0,1011:"FA53A13;2AA99CC8;",1028:9497,1029:9175,1030:188,1031:321,1032:9497,1033:9175,1034:188,1035:321}
+X-MS-Exchange-Organization-Antispam-PreContentFilter-ScanContext:
+ CategorizerOnSubmitted;CategorizerOnResolved;
+X-MS-Exchange-Organization-AVScannedByV2: true
+X-MS-Exchange-Organization-AVScanComplete: true
+X-MS-Exchange-Organization-EmailFingerprintsDetailsInfo-ChunkCount: 1
+X-MS-Exchange-Organization-EmailFingerprintsDetailsInfo-0:
+ [{"Type":"VA11","Val":"VA11_9717985F096E7DFD15C661A53C9C441775B35CC00DDE19DEA50A5575B52E25DF","Func":"SHA256","FF":0,"PD":{}},{"Type":"VA31","Val":"VA31_BC63C0692DCD0A3DFA04D4E8A024597B3B96D27B11B78C11C09A1A68DEC0CA06","Func":"SHA256","FF":0,"PD":{}},{"Type":"VA30","Val":"VA30_0CE6DBF9B6CCC253CCF82F6640ABA7E84087A013F4E901497D2040AC20F091F6","Func":"SHA256","FF":0,"PD":{}},{"Type":"VA10","Val":"VA10_68E51A297E7733F900ADD4DE671C3C869DFADF1408BA235B12A9D753369C5D9A","Func":"SHA256","FF":0,"PD":{}},{"Type":"VA2","Val":"VA2_B15F26155D8204AA458EB0A42E2ED58429202146B8C53FE777FF9B7524CFDE2D","Func":"SHA256","FF":0,"PD":{}},{"Type":"VA1","Val":"VA1_EF572FF14EA8905F028732B3C7415EC857C27EBB2FFD7832225EB5DCE4943147","Func":"SHA256","FF":0,"PD":{}},{"Type":"VA0","Val":"VA0_8804321041E2727BFE1AFA9664BE43F2062F375CC3EF426AE08352E4CA24D5F3","Func":"SHA256","FF":0,"PD":{}}]
+X-MS-Exchange-Organization-ExternalRoutingTopologyAnalysis:
+X-MS-Exchange-Organization-Recipient-Limit-Verified: True
+X-MS-Exchange-Organization-TotalRecipientCount: 1
+X-MS-Exchange-Organization-ExternalRecipientCount: 0
+X-MS-Exchange-Organization-IsSingleRepresentative: True
+X-MS-Exchange-Organization-ASDirectionalityType: 1
+X-MS-Exchange-Organization-HVERecipientsForked: 1.0
+X-MS-Exchange-Organization-SecOpsOverride-Rules-Execution-History:
+ a822af43-0202-4da7-b106-1cd33534c776
+X-MS-Exchange-Organization-SafeLinksPolicy-BIP: Built-In Protection Policy
+X-MS-Exchange-Organization-SafeAttachmentPolicy-BIP: Built-In Protection
+ Policy
+X-MS-Exchange-Organization-SafeAttachmentPolicy: Built-In Protection Policy
+X-MS-Exchange-Organization-SafeLinksPolicy: Built-In Protection Policy
+X-MS-Exchange-Organization-SafeAttachmentPolicy-Enable: 1
+X-MS-Exchange-Organization-SafeLinksPolicy-EnableSafeLinksForEmail: 1
+X-MS-Exchange-Organization-SafeLinksPolicy-EnableSafeLinksForInternalSenders:
+ 0
+X-MS-Exchange-Organization-Boomerang-Verdict: None
+X-MS-Exchange-Organization-MetadataFeatureTable:
+ {756:0,757:0,1010:0,1011:"FA53A13;2AA99CC8;",1036:"714"}
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SenderIntelligence-P2SenderOrgDomainTenantId:
+ {"stringProperties":{"_ENTITYKEY":"P2OD_TID_icloud.com_e51cdec9-811d-471d-bbe6-dd3d8d54c28b","FirstSeen_30D":"2024-01-27","LastSeen_30D":"2024-02-25","AvgInbound_1D":"309.9","AvgOutbound_1D":"0","Watermark":"2024/02/26","_STATUS":"Success"},"numericProperties":{"DomainAge":9497,"TotalEmailsSent_30D":9297,"TotalDaysSent_30D":30,"SpamCount_30D":403,"PhishCount_30D":174,"MalwareCount_30D":20,"TotalCount_Rep_30D":6855,"PartitionId":318,"TotalCountSum24h":21,"TotalCountSum1h":2,"BulkCount_30D":1406,"SpamCount_30D_B":240,"PhishCount_30D_B":190,"BulkCount_30D_B":1918,"TotalCount_Rep_30D_B":9496,"EntityFound":1}}
+X-MS-Exchange-Organization-SenderIntelligence-P2Sender:
+ {"stringProperties":{"_STATUS":"Success"},"numericProperties":{"EntityFound":0}}
+X-MS-Exchange-Organization-FeatureTableV2:
+ {501:1,502:1,503:1,651:2,664:58,665:25,1010:0,1011:"FA53A13;2AA99CC8;",1028:9497,1029:9175,1030:188,1031:321,1032:9497,1033:9175,1034:188,1035:321,1036:"714",2683:511,2684:443,2685:490,2686:443,2687:490,2739:18143,2740:6693,2741:126,2742:290,2743:14879,2744:206,2745:179663,2746:159265,2747:14,2760:1,2849:25,2850:20,2851:201,2852:9496,2853:1,2924:"CorrectlyConfigured"}
+X-MS-Exchange-Organization-Antispam-AnalystFeatureFilter-ScanContext:
+ CategorizerOnResolved;
+X-MS-Exchange-Organization-Cross-Session-Cache:
+ =?us-ascii?Q?00CIP=3D17.57.156.7;EIPC0=3D2004,2055,950,951,2005,2006,2007?=
+ =?us-ascii?Q?,2008,2009,2010,2011,2012,2013,2014,2000,2050,2051,2052,952,?=
+ =?us-ascii?Q?902,2054,2016,905,1776,903,904,2003,901,2001,3000,2002,1773,?=
+ =?us-ascii?Q?967,2058,2059,2060,531,2017,5080,5001,906,5010,5011,5002,500?=
+ =?us-ascii?Q?3,5070;MIPC0=3D951;SL=3D1;SCL=3D0;BL=3D0;RL=3D1;PID=3D0;TMD?=
+ =?us-ascii?Q?=5FSS=3D1;TMD=5FAOT=3D3392;TMD=5FCSUM=3D10157305;TMD=5FDTAET?=
+ =?us-ascii?Q?=3D0;TMD=5FES=3D9146952;TMD=5FTT=3D0;TMD=5FDMNSPM=3D41120;TM?=
+ =?us-ascii?Q?D=5FDMSPM=3D12570;TMD=5FPSATP=3D1006947;TMD=5FPS=3D1006947;T?=
+ =?us-ascii?B?TURfU0NOVD0xNDtUTURfVFNBVFA9MDtUTURfVFM9MDtUTURfQVRQUDI9VHJ1?=
+ =?us-ascii?Q?e;TMD=5FATPP1=3DTrue;TMD=5FCI=3Den-US;TMD=5FCD=3D2014-11-13_?=
+ =?us-ascii?Q?15:29:08.000;TMD=5FNEWT=3D0;TMD=5FNEWTT=3D0;TMD=5FQS=3D1;IsI?=
+ =?us-ascii?Q?ncomingMail=3Dtrue;TIP=3DNotListed;CIPCRY=3DUS;SAUTHOP=3D1;R?=
+ =?us-ascii?Q?MX=3DOffice365;RECIPIENTDOMAIN=5FORIG=3Dwayne.edu;EIPC1=3D20?=
+ =?us-ascii?Q?04,2055,950,951,2005,2006,2007,2008,2009,2010,2011,2012,2013?=
+ =?us-ascii?Q?,2014,2000,2050,2051,2052,952,902,2054,2016,905,1776,903,904?=
+ =?us-ascii?Q?,2003,901,2001,3000,2002,1773,967,2058,2059,2060,531,2017,50?=
+ =?us-ascii?Q?80,5001,906,5010,5011,5002,5003,5070;MIPC1=3D951;MX=3D00;PTR?=
+ =?us-ascii?Q?=3D00ci74p00im-qukt09081702.me.com;SPF=3Db0111cGF1bF9zaGFtb2?=
+ =?us-ascii?Q?9uQGljbG91ZC5jb20=3D;DKIM=3D00MWExaGFpLl9kb21haW5rZXkuaWNsb3?=
+ =?us-ascii?Q?VkLmNvbQ=3D=3D\;dj1ES0lNMTsgaz1yc2E7IHA9TUlJQklqQU5CZ2txaGtp?=
+ =?us-ascii?Q?Rzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUExWkVmYmtmNFRiTzJURFpJ?=
+ =?us-ascii?Q?NjdXaEo2RzhEd2szU0p5QWJCbEUvUUtkeVhGWkI0SGZFVTdBY3VaQnpjWFNK?=
+ =?us-ascii?Q?RkUwM0RsbXlPa1VBbWFhUjh5Rmx3b29IeWFLUkxJYVQzZXBHbEw1WUdvd3lm?=
+ =?us-ascii?Q?SXRMbHkyazBKajBJT0lDUnhXckIzNzhiN3FNZWltRThLbEgxVU5hVnBSVFRp?=
+ =?us-ascii?Q?MFhJWWpJS0FPcFRsQm1rTTlhLzNSbDROV3k4cExZQXBYRCtXQ2tZeFBjeG9B?=
+ =?us-ascii?Q?QWdhTjhvc3FHVENKNXIrVkhGVTdXbTl4cXEzTVptbmZvMGJ6SW5GNFVhakNL?=
+ =?us-ascii?Q?akpBUWErSE51aDk1RFdJWVAvd1Y3Ny9QeGtFYWtPdHprYkpNbEZKaUsvaE1K?=
+ =?us-ascii?Q?K0hRVXZUYnRLVzJzK3Q0dURLOERJMTZSb3RzbjZlMGhTOHh1WFBtVnRlOVp6?=
+ =?us-ascii?Q?cGxEMGZRZ20ycXdJREFRQUI=3D;DMARC=3D00aWNsb3VkLmNvbQ=3D=3D\;d?=
+ =?us-ascii?Q?j1ETUFSQzE7IHA9cXVhcmFudGluZTsgc3A9cXVhcmFudGluZTsgcnVhPW1ha?=
+ =?us-ascii?Q?Wx0bzpkQHJ1YS5hZ2FyaS5jb207IHJ1Zj1tYWlsdG86ZEBydWYuYWdhcmkuY?=
+ =?us-ascii?Q?29t;AUTHRES=3D[mx.microsoft.com,1]{5,1,UABhAHMAcwA=3D,cwBlAG?=
+ =?us-ascii?Q?4AZABlAHIAIABJAFAAIABpAHMAIAAxADcALgA1ADcALgAxADUANgAuADcA,c?=
+ =?us-ascii?Q?wBtAHQAcAAuAHIAYwBwAHQAVABvAEQAbwBtAGEAaQBuAA=3D=3D|dwBhAHkA?=
+ =?us-ascii?Q?bgBlAC4AZQBkAHUA,cwBtAHQAcAAuAE0AYQBpAGwARgByAG8AbQA=3D|aQBj?=
+ =?us-ascii?Q?AGwAbwB1AGQALgBjAG8AbQA=3D}{9,1,UABhAHMAcwA=3D,cAA9AHEAdQBhA?=
+ =?us-ascii?Q?HIAYQBuAHQAaQBuAGUAIABzAHAAPQBxAHUAYQB?=
+X-MS-Exchange-Organization-Cross-Session-Cache:
+ =?us-ascii?Q?01yAGEAbgB0AGkAbgBlACAAcABjAHQAPQAxADAAMAA=3D,YQBjAHQAaQBvAG?=
+ =?us-ascii?Q?4A|TgBvAG4AZQA=3D,aABlAGEAZABlAHIALgBmAHIAbwBtAA=3D=3D|aQBjA?=
+ =?us-ascii?Q?GwAbwB1AGQALgBjAG8AbQA=3D}{2,1,UABhAHMAcwA=3D,cwBpAGcAbgBhAH?=
+ =?us-ascii?Q?QAdQByAGUAIAB3AGEAcwAgAHYAZQByAGkAZgBpAGUAZAA=3D,aABlAGEAZAB?=
+ =?us-ascii?Q?lAHIALgBkAA=3D=3D|aQBjAGwAbwB1AGQALgBjAG8AbQA=3D}{12,7,TgBvA?=
+ =?us-ascii?Q?G4AZQA=3D,MAA=3D};TR=5FQS=3D1;P2BCLPreferredHMACCertId=3D108?=
+ =?us-ascii?Q?;SpfResult=3D1;P2DKIMALST=3D1;DkimStatus=3D1;DkimSS=3D0;Dmar?=
+ =?us-ascii?Q?cStatus=3D1;DmarcAction=3D0;ARCRES=3Dv1000000000000000000000?=
+ =?us-ascii?Q?00000000000000000000;ArcOverrideDmarcFailure=3D0;CAuthExp=3D?=
+ =?us-ascii?Q?true;PReRC=3D1;ATCHC=3D1;IMGC=5FAE=3D0;URLC=5FBE=3D0;URLC=5F?=
+ =?us-ascii?B?QkVDPTA7VVJMQ19BRT0wO1VSTENfQkE9MDtGUFI9O1RETkE9O1VDRVBWX0NG?=
+ =?us-ascii?Q?G=3DUrlCooc\;1\;0\;0\;0\;0;UCEPV=5FFP=3D-1;UCEPV=3D-1;MLF=5F?=
+ =?us-ascii?Q?DBG=3DM:UCEPV#-1#1;SLP=3D6e4d3d3d-bd3d-420d-b172-93dfb35b836?=
+ =?us-ascii?Q?f;SLPC=3DF:10111;SAP=3Dcf19f4fb-8a9a-4d6f-b485-795f9f139b07;?=
+ =?us-ascii?Q?SAPC=3DF:1|A:0;BIPLT=3D3;DIR=3D1;NoDLx=3D1;CGDLxSupported=3D?=
+ =?us-ascii?B?MTtUUl9TUz0xO1RSX1NNQVM9MDtUUl9UTUFTPTA7VFJfVU1BUz0wO1RSX1RU?=
+ =?us-ascii?Q?U24H=3D0;TR=5FTT24H=3D0;TR=5FAFWR24H=3D79176;TR=5FNDRSPMR24H?=
+ =?us-ascii?Q?=3D0;TR=5FR1H=3D3099;TR=5FR24H=3D123490;TR=5FSPMR1H=3D76;TR?=
+ =?us-ascii?Q?=5FSPMR24H=3D1957;TR=5FUP1R1H=3D673;TR=5FUP1R24H=3D18033;TR?=
+ =?us-ascii?Q?=5FUP1SPMR24H=3D545;TR=5FBCTR=3DFalse;BR=5FV=3DNone;PTRO=3Dm?=
+ =?us-ascii?Q?e.com;P2O=3Dicloud.com;P=5FCAUTH=3Dpass;P=5FCAUTHR=3D100;SIP?=
+ =?us-ascii?Q?2BCLAP=3D-1;SIP2BCLAF=3D-1;BULKF=5FDBG=3DP2SNA;RT=3DSA|SL?=
+X-MS-Exchange-Organization-Rules-Execution-History:
+ =?us-ascii?Q?8059e546-abbd-47ac-b474-49ce36eaa4c4%%%c57a93e9-5a38-4ee1-96?=
+ =?us-ascii?Q?92-1f05e904268c%%%06a00729-79b8-4c70-a534-26a8ceb222ff%%%70e?=
+ =?us-ascii?Q?b0939-619b-43b6-abdc-b267fca9e573%%%343e9783-fd04-4341-9311-?=
+ =?us-ascii?Q?16ded4361dc0%%%d8f048ae-2c6c-42c7-8f0b-e667b1ddc4ad%%%ff8fa0?=
+ =?us-ascii?Q?0e-25b4-4662-9601-d3aa0a449908%%%1de800be-1b91-4860-b348-2b9?=
+ =?us-ascii?Q?f117b089c%%%6546e010-cfbe-46be-aedf-806341bbd38d%%%3cacc3a6-?=
+ =?us-ascii?Q?b151-4c5d-aa48-a8d1cb99ae44%%%6747edc5-9526-41e4-a327-a529b1?=
+ =?us-ascii?Q?954713%%%6e1fce19-d325-46b6-a2fe-8e1acf13ee90%%%0664afae-00c?=
+ =?us-ascii?Q?f-4661-a5c2-b6cef1807f29%%%76019a53-a7be-4ed2-b544-ece97b940?=
+ =?us-ascii?Q?153%%%912af27d-cc50-4288-bad6-d1effda2d2f5%%%d6ea5529-5803-4?=
+ =?us-ascii?Q?cc0-9d21-774bce86ba6d%%%ba44bd88-f1b4-4ca0-b7f0-f4b05aec25eb?=
+ =?us-ascii?Q?%%%22969061-f5f4-4b9c-bf55-06ff8668b50f%%%49b4d58c-7b83-4775?=
+ =?us-ascii?Q?-bd9f-148a5b971048%%%1dcf82c7-b726-490a-81da-a307a53a0257%%%?=
+ =?us-ascii?Q?b4698040-af80-4553-b95f-6c9fb1000fb5%%%070d3ad1-8564-42e6-8e?=
+ =?us-ascii?Q?d5-a5530fb178d8%%%a5732bd5-e773-4faf-b3f9-3a57d0d52769%%%12e?=
+ =?us-ascii?Q?8bacd-43a5-40b5-aa52-b4fd0917fd41%%%bd0c4e1b-7fd5-4f9c-acf0-?=
+ =?us-ascii?Q?1625fb55f5f1?=
+X-MS-Exchange-Organization-Rules-Execution-History:
+ =?us-ascii?Q?5e785584-980d-4ede-9952-e244d78e925e%%%86c6ff89-e40f-472c-bd?=
+ =?us-ascii?Q?d9-e188140db236%%%94d0cfdd-a775-4c82-9dd0-2a92fe63f897%%%755?=
+ =?us-ascii?Q?3a0db-02f5-4b71-b5de-6a3b53136726%%%741c3a3d-084e-43cf-bdf7-?=
+ =?us-ascii?Q?eebb2e908e85%%%8a5a4b36-846c-4e4d-9815-c240efc0d906%%%2a98d6?=
+ =?us-ascii?Q?c5-b303-4d61-a247-a4dd32f84c3b%%%ca09272e-d081-4ca2-b83d-80a?=
+ =?us-ascii?Q?b62c3316f%%%de865429-3402-4cc1-9550-114f34a996b4%%%3c2203bc-?=
+ =?us-ascii?Q?0d07-4417-a43e-786796cab9f4%%%966191e4-b85d-4a72-8fb2-f6da6f?=
+ =?us-ascii?Q?0ad86a%%%2b5c4443-d3f7-4a54-8230-0b92a89c69ec%%%cb51393b-fe0?=
+ =?us-ascii?Q?f-4444-b1f9-907b479564d8%%%c1afbc6b-3806-43c8-85c5-b2bd8ad7e?=
+ =?us-ascii?Q?bf8%%%1bb9db1e-7443-46a1-9822-ff8c72f6dcd8%%%faf5594f-f726-4?=
+ =?us-ascii?Q?840-826e-b2bb6b34c3cc%%%8bacf84c-e2fb-4228-b373-f0921ff62054?=
+ =?us-ascii?Q?%%%36d715ba-5d26-4b26-9ec4-33957df84732%%%eb7226aa-64ea-44dd?=
+ =?us-ascii?Q?-98f9-61739670b35a%%%81a6c441-610d-46db-9637-102171c6d98c%%%?=
+ =?us-ascii?Q?1fc9f035-9026-4ff6-8801-3b202f1b7d52%%%0c6eab3c-f36a-4bb9-98?=
+ =?us-ascii?Q?b7-568620cc0a41%%%edc5f6d0-f6bc-4682-b651-c4ce977b004c%%%c95?=
+ =?us-ascii?Q?40591-eb68-4bde-af18-13a1d9dbaa3f%%%fe6be38d-4dad-4b0c-a40c-?=
+ =?us-ascii?Q?ab7553c85039?=
+MIME-Version: 1.0
+
+--Apple-Mail=_D7F678FD-5F9E-498D-87B7-E75695E8ECAE
+Content-Disposition: attachment;
+	filename=snake.py
+Content-Type: text/x-python-script;
+	x-unix-mode=0644;
+	name="snake.py"
+Content-Transfer-Encoding: 7bit
+
+import random
+import time
+import turtle
+
+class SnakeGame:
+    ''' SnakeGame class represents the main game logic for a
+    simple Snake game implemented using the Turtle module
+    '''
+
+    SEGMENT_SIZE = 20
+    DELAY = 0.1
+    DIRECTIONS = {"up": (0, SEGMENT_SIZE), 
+                  "down": (0, -SEGMENT_SIZE), 
+                  "left": (-SEGMENT_SIZE, 0), 
+                  "right": (SEGMENT_SIZE, 0)}
+
+    def __init__(self):
+        self.win = turtle.Screen()
+        self.win.title("Snake Game")
+        self.win.bgcolor("green")
+        self.win.setup(width=600, height=600)
+        self.win.tracer(0)
+
+        self.head = self.create_turtle("square", "white")
+        self.head.direction = "stop"  
+        self.food = self.create_food()
+        self.segments = []
+        self.score = 0
+        self.high_score = 0
+        self.score_display = self.create_score_display()
+
+        self.win.listen()
+        self.win.onkeypress(lambda: self.change_direction("up"), "Up")
+        self.win.onkeypress(lambda: self.change_direction("down"), "Down")
+        self.win.onkeypress(lambda: self.change_direction("left"), "Left")
+        self.win.onkeypress(lambda: self.change_direction("right"), "Right")
+
+    def create_turtle(self, shape, color, start_pos=(0, 0)):
+        turtle_obj = turtle.Turtle()
+        turtle_obj.speed(0)
+        turtle_obj.shape(shape)
+        turtle_obj.color(color)
+        turtle_obj.penup()
+        turtle_obj.goto(start_pos)
+        return turtle_obj
+
+    def create_food(self):
+        return self.create_turtle("circle", "red", (random.randint(-290, 290), random.randint(-290, 290)))
+
+    def create_score_display(self):
+        score_display = self.create_turtle("square", "white", (0, 260))
+        score_display.hideturtle()
+        return score_display
+
+    def change_direction(self, direction):
+        if self.head.direction == "stop" or self.DIRECTIONS.get(direction) != (-self.DIRECTIONS[self.head.direction][0], -self.DIRECTIONS[self.head.direction][1]):
+            self.head.direction = direction
+
+    def move(self):
+        # Move only if direction is set
+        if self.head.direction != "stop":
+            self.head.setpos(self.head.pos() + self.DIRECTIONS[self.head.direction])
+
+    def check_collision(self):
+        if abs(self.head.xcor()) > 290 or abs(self.head.ycor()) > 290 or any(segment.distance(self.head) < self.SEGMENT_SIZE for segment in self.segments):
+            self.reset_game()
+
+    def update_score(self):
+        if self.head.distance(self.food) < self.SEGMENT_SIZE:
+            self.food.goto(random.randint(-290, 290), random.randint(-290, 290))
+            self.segments.append(self.create_turtle("square", "grey"))
+            self.DELAY -= 0.001
+            self.score += 10
+            if self.score > self.high_score:
+                self.high_score = self.score
+            self.update_score_display()
+
+    def update_score_display(self):
+        self.score_display.clear()
+        self.score_display.write("Score: {}  High Score: {}".format(self.score, self.high_score), align="center",
+                            font=("Courier", 24, "normal"))
+
+    def reset_game(self):
+        time.sleep(1)
+        self.head.goto(0, 0)
+        self.head.direction = "stop"
+        for segment in self.segments:
+            segment.goto(1000, 1000)
+        self.segments.clear()
+        self.score_display.clear()
+        self.score = 0
+        self.update_score_display()
+        self.food.goto(random.randint(-290, 290), random.randint(-290, 290))
+
+    def update_segments(self):
+        if self.segments:
+            for index in range(len(self.segments) - 1, 0, -1):
+                self.segments[index].goto(self.segments[index - 1].pos())
+            self.segments[0].goto(self.head.pos())
+
+    def start(self):
+        while True:
+            self.check_collision()
+            self.update_score()
+            self.update_segments()
+            self.move()
+            time.sleep(self.DELAY)
+            # Update screen within the loop
+            self.win.update()
+
+if __name__ == "__main__":
+    game = SnakeGame()
+    game.start()
+--Apple-Mail=_D7F678FD-5F9E-498D-87B7-E75695E8ECAE--
