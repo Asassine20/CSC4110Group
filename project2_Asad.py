@@ -25,6 +25,9 @@ class SnakeGame:
         self.screen = turtle.TurtleScreen(self.canvas)
         self.screen.bgcolor("green")
 
+        self.score_screen = turtle.TurtleScreen(self.score_canvas)
+        self.score_screen.bgcolor("blue")
+
         self.root = root
         self.game_over = False
         root.protocol("WM_DELETE_WINDOW", self.end_game)
@@ -47,8 +50,10 @@ class SnakeGame:
         self.update_score_display()
 
 
-    def create_turtle(self, shape, color, start_pos):
-        turtle_obj = turtle.RawTurtle(self.screen)
+    def create_turtle(self, shape, color, start_pos, screen=None):
+        if screen is None:
+            screen = self.screen
+        turtle_obj = turtle.RawTurtle(screen)
         turtle_obj.speed(0)
         turtle_obj.shape(shape)
         turtle_obj.color(color)
@@ -60,7 +65,7 @@ class SnakeGame:
         return self.create_turtle("circle", "red", (random.randint(-290, 290), random.randint(-290, 290)))
 
     def create_score_display(self):
-        score_display = self.create_turtle("square", "white", (0, 260))
+        score_display = self.create_turtle("square", "white", (0, -20), self.score_screen)
         score_display.hideturtle()
         return score_display
 
@@ -99,7 +104,7 @@ class SnakeGame:
         self.score_display.clear()
         self.score_display.color("white")  
         self.score_display.penup()
-        self.score_display.goto(0, 260)
+        self.score_display.goto(0, -20)
         self.score_display.write("Score: {}  High Score: {}".format(self.score, self.high_score), align="center",
                             font=("Courier", 24, "normal"))
 
