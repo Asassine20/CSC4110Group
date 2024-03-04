@@ -179,7 +179,7 @@ class SnakeGame:
 
         if self.head.distance(self.food) < self.SEGMENT_SIZE:
             self.food.goto(random.randint(-290, 290), random.randint(-290, 290))
-            new_segment, _ = self.create_turtle("square", "grey", self.head.position())
+            new_segment, _ = self.create_turtle("square", "light green", self.head.position())
             self.segments.append(new_segment)
             self.update_segments()
             if self.score == 0:
