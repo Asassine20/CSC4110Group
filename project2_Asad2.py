@@ -3,6 +3,8 @@ import time
 import turtle
 import tkinter as tk
 from tkinter import ttk
+from PIL import Image
+import os
 
 class SnakeGame:
     ''' SnakeGame class represents the main game logic for a
@@ -129,8 +131,18 @@ class SnakeGame:
                 eyes_turtles.append(eye)
         return turtle_obj, eyes_turtles
 
+    def resize_gif(path, width, height):
+        img = Image.open(path)
+        img = img.resize((width, height))
+        img.save(path)
+    resize_gif("food5.gif", 25, 25)
+
     def create_food(self):
-        food, _ = self.create_turtle("circle", "red", (random.randint(-290, 290), random.randint(-290, 290)))
+        if os.path.isfile("food5.gif"):
+            self.screen.addshape("food5.gif")
+            food, _ = self.create_turtle("food5.gif", "red", (random.randint(-290, 290), random.randint(-290, 290)))
+        else:
+            food, _ = self.create_turtle("circle", "red", (random.randint(-290, 290), random.randint(-290, 290)))
         return food
 
     def change_direction(self, direction):
