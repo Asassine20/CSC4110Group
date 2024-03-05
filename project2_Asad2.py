@@ -46,13 +46,13 @@ class SnakeGame:
         self.canvas.config(bg="green")
 
         self.score_canvas = score_canvas
-        self.score_canvas.config(bg="blue")
+        self.score_canvas.config(bg="black")
 
         self.screen = turtle.TurtleScreen(self.canvas)
         self.screen.bgcolor("green")
 
         self.score_screen = turtle.TurtleScreen(self.score_canvas)
-        self.score_screen.bgcolor("blue")
+        self.score_screen.bgcolor("black")
 
         self.draw_background()
     
@@ -66,7 +66,10 @@ class SnakeGame:
         self.segments = []
         self.score = 0
         self.high_score = 0
-        self.score_label = tk.Label(self.score_canvas, bg="blue", fg="white", font=("Courier", 24, "normal"), width=31)
+
+        score_frame = tk.LabelFrame(self.score_canvas, text="----------Score Board----------", bg="black", fg="light green", font=("Courier", 24, "normal"))
+        score_frame.pack(fill="both", expand="yes")
+        self.score_label = tk.Label(score_frame, bg="black", fg="light green", font=("Courier", 24, "underline"), width=31, justify='center', anchor='center')
         self.score_label.pack()
 
 
@@ -253,7 +256,7 @@ if __name__ == "__main__":
     canvas = tk.Canvas(root, width=600, height=600, bg="green")
     canvas.pack(side=tk.BOTTOM)
 
-    score_canvas = tk.Canvas(root, width=600, height=40, bg="Blue")
+    score_canvas = tk.Canvas(root, width=600, height=40, bg="black")
     score_canvas.pack(side=tk.TOP)
 
     game = SnakeGame(canvas, score_canvas, root)
