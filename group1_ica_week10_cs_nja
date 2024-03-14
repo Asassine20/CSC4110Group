@@ -1,0 +1,32 @@
+#Revision 1 3/13/2024
+##Begin 3/13/2024
+"""
+Ordering system that tracks orderID, product, customerID, date as a key value map
+"""
+import random as r
+import datetime as d
+
+def add_to_map():
+    """
+    To add to an arr or dict in key value format
+    """
+    arr = {}
+    sample = ['orderID', 'product', 'customerID', 'date']
+    #Keys
+    product_sample = ['product1', 'product2', 'product3', 'product4']
+    orderID = r.randint(1, 5000)
+    customerID = r.randint(1,5000)
+    date = d.date(r.randint(2022,2024), r.randint(1,12), r.randint(1, 30))
+    date = date.strftime("%x")
+    product = r.choice(product_sample)
+    arr[sample[0]] = orderID
+    arr[sample[1]] = product
+    arr[sample[2]] = customerID
+    arr[sample[3]] = date
+    return arr
+    
+dict_1 = add_to_map()
+#above and below is for testing, can be omitted when adding more code.
+print(dict_1)           
+#Revision 1 3/13/2024
+##Begin 3/13/2024
