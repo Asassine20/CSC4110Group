@@ -1,0 +1,64 @@
+User Agreement
+
+Last Updated April 08, 2024
+
+Please read this user agreement before using Our Service.
+
+Interpretation and Definitions
+
+Interpretation
+
+Words where the initial letter is capitalized have defined meanings with conditions. The definitions below will have the same meaning in singular or plural.
+
+Definitions
+
+For the purpose of this user agreement:
+
+Application means the software program provided by the Company downloaded by You on any electronic device, from Our Website.
+Company (referred to as either “the Company”, “We”, “Us” or “Our” in this Agreement) refers to CSC4110 Group 1 and Forestview.
+Device means any device that can access the Service such as a computer, a cell phone or a digital tablet.
+Service refers to the Application, the Website, or both.
+User Agreement means this User Agreement forming the entire agreement between You and the Company regarding the use of the Service. This Agreement has been created with reference to termsfeed.com and ironcladapp.com
+Website refers to CSC4110 Group 1, accessible from home.html
+You means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
+Acknowledgment
+
+This is the User Agreement that governs the use of this Service and the Agreement between You and the Company. This Agreement shows the rights and obligations of all users of the Service.
+
+When You access or use the Service You are bound to accept and comply with this Agreement. This Agreement applies to all visitors, users, and others who access or use the Service. If You disagree with any part of this Agreement then discontinue use of the Service.
+
+When You access and use the Service You are bound to accept and comply with the Privacy Policy of the Company. Our Privacy Policy states Our policy and procedure on collection, disclosure, and use of Your personal data when You use the Application or the Website. This Agreement shows You about Your privacy rights and how the law protects You. Please read the Privacy Policy carefully before using Our Service.
+
+Privacy Policy
+
+We, the Company, are developing software for use in data storage. We currently do not collect personal information nor cookies when accessing our services. Our Service is purely for download and does not require an internet connection. We do reserve the right to change this due to Our Changes to This User Agreement, in case of changes in Service. If for any reason You do not wish any personal information to be used, by changes in Service, contact us which is found below, and discontinue the use of Our Service.
+
+Data privacy and Application sharing
+
+You may not sell or distribute data or the Service without express consent of the Company. Since we do not currently collect personal information with the Service, all data and Services must have the consent of the Company before leaving the user, You, to any third parties. The right to be forgotten is allowed within this Agreement, however since we currently do not collect any data, it is up to the user to delete any data using the Service.
+
+Unilateral Indemnity Agreement
+
+Upon accepting of the User Agreement, by use of Our Services You have entered an Indemnification Agreement on day of access between the Company and You, or third party company in place of You.
+
+We, the Company, seeks protection against any liability, claim, action, suit, loss, or damage from data breaches, zero-day attacks, and database worms, such as SQL injection.
+
+You, see to minimize any hardship the Company may suffer as a result of any liability, claim, action, suit, loss, or damage from data breaches, zero-day attacks, and database worms, such as SQL injection.
+
+The condition of You and the Company entering into this Agreement, and such receipt and sufficiency of the Agreement are now acknowledged, by both parties to this agreement as follows:
+
+You agree to indemnify and hold harmless the Company, its respective affiliates, or employees and assigns against any and all from any and all claims, including but not limited to, liability, demands, and causes of action of any kind arising from or related to any loss, damage, punitive damages, reasonable legal fees and costs whatsoever, which result from data breaches, zero-day attacks, and database worms, such as SQL injection.
+
+Vulnerability Assessments
+
+Periodically there are vulnerability assessments against Our system, and that by using Our Service all vendors must take similar preventative actions.
+
+Changes to This User Agreement
+
+We reserve the right, at Our sole discretion, to modify or replace this Agreement at any time. If a revision is made, We will give notice of at least 30 days prior to any new revision taking effect. What a revision looks like will be determined at Our sole discretion. Requirements of the Agreement will occur, over time, due to the changing technological climate and security landscape changes. By continuing access and/or use of Our Service after revisions come into effect, You agree to be bound by the revision. If You do not agree to the new Agreement, please stop using the website and the Service.
+
+Contact Us
+
+If you have any questions about this Agreement, you can contact us:
+
+By email: fj7174@wayne.edu
