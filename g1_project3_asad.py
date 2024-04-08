@@ -303,26 +303,33 @@ def ask_query():
 def setup_ui():
     root = tk.Tk()
     root.title("Feedback & Bug Tracker")
-    
-    root.geometry("500x400")
+    root.geometry("450x350")
+    root.configure(bg='green')
 
-    tk.Label(root, text="Feedback System", font=('Arial', 14)).pack(pady=10)
-    
-    tk.Button(root, text="Enter Feedback", command=ask_feedback).pack(pady=5)
-    tk.Button(root, text="View Feedback", command=view_feedback).pack(pady=5)
+    # Use a frame for the Feedback System
+    feedback_frame = tk.Frame(root, bg='light green')
+    feedback_frame.grid(row=0, padx=10, pady=30)
+    tk.Label(feedback_frame, text="Feedback\nSystem", bg='light green', font=('Arial', 14)).grid(row=0, column=0)
+    tk.Button(feedback_frame, text="Enter Feedback", command=ask_feedback).grid(row=0, column=1, padx=5)
+    tk.Button(feedback_frame, text="View Feedback", command=view_feedback).grid(row=0, column=2, padx=5)
 
-    tk.Label(root, text="Bug Tracker", font=('Arial', 14)).pack(pady=10)
-    
-    tk.Button(root, text="Enter Bug Report", command=ask_bug_report).pack(pady=5)
-    tk.Button(root, text="View Bug Reports", command=view_bug_reports).pack(pady=5)
-    tk.Button(root, text="Query Bug Reports", command=ask_query).pack(pady=5)
+    # Use a frame for the Bug Tracker
+    bug_frame = tk.Frame(root, bg='light green')
+    bug_frame.grid(row=1, padx=10, pady=30)
+    tk.Label(bug_frame, text="Bug\nTracker", bg='light green', font=('Arial', 14)).grid(row=0, column=0)
+    tk.Button(bug_frame, text="Enter Bug Report", command=ask_bug_report).grid(row=0, column=1, padx=5)
+    tk.Button(bug_frame, text="View Bug Reports", command=view_bug_reports).grid(row=0, column=2, padx=5)
+    tk.Button(bug_frame, text="Query Bug Reports", command=ask_query).grid(row=0, column=3, padx=5)
 
-    tk.Label(root, text="Add Dev", font=('Arial', 14)).pack(pady=10)
-    tk.Button(root, text="Add Developer", command=ask_dev).pack(pady=5)
-    tk.Button(root, text="Change Developer Status", command=ask_dev_status).pack(pady=5)
-
+    # Use a frame for the Add Dev
+    dev_frame = tk.Frame(root, bg='light green')
+    dev_frame.grid(row=2, padx=10, pady=30)
+    tk.Label(dev_frame, text="Add\nDev", bg='light green', font=('Arial', 14)).grid(row=0, column=0)
+    tk.Button(dev_frame, text="Add Developer", command=ask_dev).grid(row=0, column=1, padx=5)
+    tk.Button(dev_frame, text="Change Developer Status", command=ask_dev_status).grid(row=0, column=2, padx=5)
 
     root.mainloop()
+
 
 
 if __name__ == "__main__":
