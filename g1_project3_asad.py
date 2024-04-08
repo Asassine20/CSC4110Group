@@ -161,15 +161,7 @@ def ask_bug_report():
     """
     Prompts the user to enter bug report.
     """
-    def add_dev(dev_name):
-        """
-        Adds a developer to the dev_data dictionary.
-        """
-        _, dev_data = load_bug_tracker()
-        dev_data[dev_name] = True
-        _, current_tracker = load_bug_tracker()  
-        save_bug_tracker(current_tracker, dev_data)
-    add_dev('asad')
+
     bug_report_window = tk.Toplevel()
     bug_report_window.title("Enter Bug Report")
     bug_report_window.geometry("500x250")
@@ -210,6 +202,35 @@ def ask_bug_report():
 
     tk.Button(bug_report_window, text="Submit", command=submit_bug_report).grid(row=len(fields), columnspan=2, pady=10)
 
+def add_dev(dev_name):
+    """
+    Adds a developer to the dev_data dictionary.
+    """
+    _, dev_data = load_bug_tracker()
+    dev_data[dev_name] = True
+    _, current_tracker = load_bug_tracker()  
+    save_bug_tracker(current_tracker, dev_data)
+
+def ask_dev():
+    """
+    Prompts the user to enter a developer's name.
+    """
+    dev_window = tk.Toplevel()
+    dev_window.title("Add Developer")
+    
+    dev_entry = tk.Entry(dev_window, width=50)
+    dev_entry.pack(pady=10)
+    
+    def submit_dev():
+        dev_name = dev_entry.get()
+        if dev_name:
+            add_dev(dev_name)
+            messagebox.showinfo("Success", "Developer added successfully.", parent=dev_window)
+        else:
+            logging.info("No developer name entered.")
+        dev_window.destroy()
+    
+    tk.Button(dev_window, text="Submit", command=submit_dev).pack(pady=5)
 
     
 def setup_ui():
@@ -228,6 +249,10 @@ def setup_ui():
     tk.Button(root, text="Enter Bug Report", command=ask_bug_report).pack(pady=5)
     tk.Button(root, text="View Bug Reports", command=view_bug_reports).pack(pady=5)
     
+    tk.Label(root, text="Add Dev", font=('Arial', 14)).pack(pady=10)
+    tk.Button(root, text="Add Developer", command=ask_dev).pack(pady=5)
+
+
     root.mainloop()
 
 
