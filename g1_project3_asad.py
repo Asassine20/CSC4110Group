@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import simpledialog, messagebox, scrolledtext
+from tkinter import messagebox, scrolledtext
 import pickle
 import datetime as d
 import logging
@@ -96,6 +96,7 @@ def save_bug_tracker(tracker, dev_data):
         pickle.dump(tracker, f)
     with open('ForestviewSoftwareDevs.pkl', 'wb') as g:
         pickle.dump(dev_data, g)
+    
 
 def check_dev(dev_name, dev_data):
     """
@@ -205,7 +206,7 @@ def add_dev(dev_name):
     """
     _, dev_data = load_bug_tracker()
     dev_data[dev_name] = True
-    _, current_tracker = load_bug_tracker()  
+    current_tracker, _ = load_bug_tracker()  
     save_bug_tracker(current_tracker, dev_data)
 
 def ask_dev():
@@ -237,7 +238,7 @@ def change_dev_status(dev_name, status):
     _, dev_data = load_bug_tracker()
     if dev_name in dev_data:
         dev_data[dev_name] = status
-        _, current_tracker = load_bug_tracker()  
+        current_tracker, _ = load_bug_tracker()  
         save_bug_tracker(current_tracker, dev_data)
     else:
         print(f"Developer {dev_name} does not exist.")
@@ -329,7 +330,6 @@ def setup_ui():
     tk.Button(dev_frame, text="Change Developer Status", command=ask_dev_status).grid(row=0, column=2, padx=5)
 
     root.mainloop()
-
 
 
 if __name__ == "__main__":
