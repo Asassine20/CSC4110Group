@@ -101,8 +101,7 @@ def check_dev(x, data):
     """
     Checks if dev is available
     """
-    if data.get(x, False):
-        data[x] = False
+    if x in data:
         return True
     else:
         return False
@@ -116,7 +115,7 @@ def _filter(x):
         if (i.isalpha() or i.isdigit() or i == ' ' or i == ','):
             temp += i
     return temp
-
+'''
 def create_bug_report(entry_log, tracker, dev_data):
     """
     Bug tracking data creation
@@ -135,7 +134,7 @@ def create_bug_report(entry_log, tracker, dev_data):
         save_bug_tracker(tracker, dev_data)
     else:
         print("Dev is not available")
-
+'''
 def query_bug_report(tracker, name):
     """
     Function to query bug database
