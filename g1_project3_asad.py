@@ -46,7 +46,7 @@ def ask_feedback():
 
 
     def submit_feedback():
-        feedback = feedback_entry.get()
+        feedback = _filter(feedback_entry.get())
         if feedback:
             log_feedback(feedback)
         else:
@@ -97,14 +97,12 @@ def save_bug_tracker(tracker, dev_data):
     with open('ForestviewSoftwareDevs.pkl', 'wb') as g:
         pickle.dump(dev_data, g)
 
-def check_dev(x, data):
+def check_dev(dev_name, dev_data):
     """
     Checks if dev is available
     """
-    if x in data:
-        return True
-    else:
-        return False
+    return dev_name in dev_data and dev_data[dev_name]
+
 
 def _filter(x):
     """
@@ -175,7 +173,7 @@ def ask_bug_report():
         entries.append(entry)
 
     def submit_bug_report():
-        values = [entry.get() for entry in entries]
+        values = [_filter(entry.get()) for entry in entries]
         if all(values):
             name, bug, app, dev = values
             tracker, dev_data = load_bug_tracker()
@@ -199,7 +197,7 @@ def ask_bug_report():
             print("Please fill in all fields.")
         bug_report_window.destroy()
 
-    tk.Button(bug_report_window, text="Submit", command=submit_bug_report).grid(row=len(fields), columnspan=2, pady=10)
+    tk.Button(bug_report_window, text="Submit", command=submit_bug_report).grid(row=len(fields), column=1, pady=10)
 
 def add_dev(dev_name):
     """
@@ -217,11 +215,12 @@ def ask_dev():
     dev_window = tk.Toplevel()
     dev_window.title("Add Developer")
     
+    tk.Label(dev_window, text="Enter Developer Name", font=('Arial', 10)).grid(row=0, pady=5)
     dev_entry = tk.Entry(dev_window, width=50)
-    dev_entry.pack(pady=10)
+    dev_entry.grid(row=1, pady=10, padx=10)
     
     def submit_dev():
-        dev_name = dev_entry.get()
+        dev_name = _filter(dev_entry.get())
         if dev_name:
             add_dev(dev_name)
             messagebox.showinfo("Success", "Developer added successfully.", parent=dev_window)
@@ -229,7 +228,76 @@ def ask_dev():
             logging.info("No developer name entered.")
         dev_window.destroy()
     
-    tk.Button(dev_window, text="Submit", command=submit_dev).pack(pady=5)
+    tk.Button(dev_window, text="Submit", command=submit_dev).grid(row=2, pady=5, columnspan=2)
+
+def change_dev_status(dev_name, status):
+    """
+    Changes the availability of a developer in the dev_data dictionary.
+    """
+    _, dev_data = load_bug_tracker()
+    if dev_name in dev_data:
+        dev_data[dev_name] = status
+        _, current_tracker = load_bug_tracker()  
+        save_bug_tracker(current_tracker, dev_data)
+    else:
+        print(f"Developer {dev_name} does not exist.")
+
+def ask_dev_status():
+    """
+    Prompts the user to enter a developer's name and new availability.
+    """
+    status_window = tk.Toplevel()
+    status_window.title("Change Developer Status")
+    
+    tk.Label(status_window, text="Developer Name", font=('Arial', 10)).grid(row=0, pady=5)
+    dev_entry = tk.Entry(status_window, width=50)
+    dev_entry.grid(row=0, column=1, pady=10, padx=10)
+
+    tk.Label(status_window, text="Availability", font=('Ariel', 10)).grid(row=1)
+
+    status_var = tk.StringVar(value='True')
+
+    tk.Radiobutton(status_window, text="Available", variable=status_var, value='True').grid(row=1, column=1, sticky='w', padx=30)
+    tk.Radiobutton(status_window, text="Not Available", variable=status_var, value='False').grid(row=1, column=1, sticky='e', padx=30)
+
+    def submit_status():
+        dev_name = dev_entry.get()
+        status = status_var.get().lower() == 'true'  # Convert to boolean
+        if dev_name:
+            change_dev_status(dev_name, status)
+            messagebox.showinfo("Success", "Developer status updated successfully.", parent=status_window)
+        else:
+            logging.info("No developer name entered.")
+        status_window.destroy()
+
+    tk.Button(status_window, text="Submit", command=submit_status).grid(row=2, columnspan=2, pady=5)
+
+def ask_query():
+    """
+    Prompts the user to enter a name to query.
+    """
+    query_window = tk.Toplevel()
+    query_window.title("Query Bug Reports")
+    
+    tk.Label(query_window, text="Enter Name", font=('Arial', 10)).grid(row=0, pady=5)
+    name_entry = tk.Entry(query_window, width=50)
+    name_entry.grid(row=0, column=1, pady=10, padx=10)
+
+    def submit_query():
+        name = _filter(name_entry.get())
+        if name:
+            tracker, _ = load_bug_tracker()
+            result = query_bug_report(tracker, name)
+            if result:
+                result_text = str(result)
+                messagebox.showinfo("Query Result", result_text, parent=query_window)
+            else:
+                messagebox.showinfo("No Result", "No bug report found for that name.", parent=query_window)
+        else:
+            logging.info("No name entered.")
+        query_window.destroy()
+
+    tk.Button(query_window, text="Submit", command=submit_query).grid(row=1, pady=5, columnspan=2)
 
     
 def setup_ui():
@@ -247,9 +315,11 @@ def setup_ui():
     
     tk.Button(root, text="Enter Bug Report", command=ask_bug_report).pack(pady=5)
     tk.Button(root, text="View Bug Reports", command=view_bug_reports).pack(pady=5)
-    
+    tk.Button(root, text="Query Bug Reports", command=ask_query).pack(pady=5)
+
     tk.Label(root, text="Add Dev", font=('Arial', 14)).pack(pady=10)
     tk.Button(root, text="Add Developer", command=ask_dev).pack(pady=5)
+    tk.Button(root, text="Change Developer Status", command=ask_dev_status).pack(pady=5)
 
 
     root.mainloop()
