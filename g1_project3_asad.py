@@ -38,20 +38,22 @@ def ask_feedback():
     """
     feedback_window = tk.Toplevel()
     feedback_window.title("Enter Feedback")
-    
+    feedback_window.geometry("330x150")
+    tk.Label(feedback_window, text="Enter your feedback:", font=('Arial', 10)).grid(row=0, column=0, pady=10)
+
     feedback_entry = tk.Entry(feedback_window, width=50)
-    feedback_entry.pack(pady=10)
-    
+    feedback_entry.grid(row=1, column=0, padx=10, pady=10)
+
+
     def submit_feedback():
         feedback = feedback_entry.get()
         if feedback:
             log_feedback(feedback)
-            messagebox.showinfo("Success", "Feedback logged successfully.", parent=feedback_window)
         else:
             logging.info("No feedback entered.")
         feedback_window.destroy()
-    
-    tk.Button(feedback_window, text="Submit", command=submit_feedback).pack(pady=5)
+    tk.Button(feedback_window, text="Submit", command=submit_feedback).grid(row=2, column=0, pady=10)
+
 
 def view_feedback():
     """
@@ -63,7 +65,7 @@ def view_feedback():
     feedback_window = tk.Toplevel()
     feedback_window.title("View Feedback")
     
-    feedback_display = tk.Text(feedback_window, width=80, height=10)
+    feedback_display = tk.Text(feedback_window, width=80, height=20)
     feedback_display.insert(tk.END, feedback_str if feedback_str else "No feedback yet.")
     feedback_display.pack(pady=10)
     
