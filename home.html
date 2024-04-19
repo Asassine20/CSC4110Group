@@ -1,90 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group One Homepage</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        :root {
-            --color-primary: #191d2b;
-            --color-secondary: #27AE60;
-            --color-white: #ffffff;
-            --color-black: #000;
-            --color-grey0: #f8f8f8;
-            --color-grey-1: #dbe1e8;
-            --color-grey-2: #b2becd;
-            --color-grey-3: #6c7983;
-            --color-grey-4: #454e56;
-            --color-grey-5: #2a2e35;
-            --color-grey-6: #12181b;
-            --br-sm-2: 14px;
-            --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
-        }
-
-        body {
-            background-color: var(--color-primary);
-            font-family: "Poppins", sans-serif;
-            font-size: 1.1rem;
-            color: var(--color-white);
-            transition: all 0.4s ease-in-out;
-        }
-
-        .navbar, .container {
-            background-color: var(--color-grey-5);
-            border-color: var(--color-secondary);
-        }
-
-        .navbar a, .container a {
-            color: var(--color-secondary);
-        }
-
-        .header {
-            text-align: center;
-            margin-top: 20px;
-            color: var(--color-white);
-        }
-
-        .team-logo {
-            width: 100px; 
-            height: auto;
-        }
-
-        .navbar:hover {
-            cursor: pointer;
-            background-color: var(--color-grey-4);
-        }
-
-        h1, h2, h4 {
-            color: var(--color-white);
-        }
-
-        .container {
-            border-radius: var(--br-sm-2);
-            box-shadow: var(--box-shadow-1);
-            padding: 20px;
-        }
-
-        .container h2.header {
-            color: var(--color-secondary);
-            text-transform: uppercase;
-        }
-
-        .container p {
-            color: var(--color-grey-1);
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="home.html" style="font-weight: bold;">Home</a>
-            <div class="collapse navbar-collapse">
+            <!-- Navbar toggler button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="project1.html">Project 1</a>
-                    </li>                  
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="project2.html">Project 2</a>
                     </li>
@@ -98,9 +36,10 @@
             </div>
         </div>
     </nav>
+
     <div class="header-logo" style="text-align: center; margin: 20px 0;">
         <a href="home.html">
-            <img src="TeamLogo.png" alt="Logo" style="width: 1000px; max-width: 100%; height: auto;"> 
+            <img src="TeamLogo.png" alt="Logo" style="width: 1000px; max-width: 100%; height: auto;">
         </a>
     </div>
 
@@ -129,17 +68,21 @@
             </div>
             <div class="col-md-6">
                 <h4>Paul Shamoon</h4>
-                <p>Senior Year, Interested in artificial intelligence / machine learning, and looking to find a job as a software engineer</p>
+                <p>Senior Year, Interested in artificial intelligence / machine learning, and looking to find a job as a
+                    software engineer</p>
             </div>
         </div>
     </div>
 
     <div class="container mt-4">
         <h2 class="header">User Agreement</h2>
-        <p>By browsing the website or using our services, you agree to our <a href="UserAgreement.html" target="_blank">User Agreement</a>, please read our User Agreement for more details.</p>
+        <p>By browsing the website or using our services, you agree to our <a href="UserAgreement.html"
+                target="_blank">User Agreement</a>, please read our User Agreement for more details.</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>

@@ -5,56 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group One Homepage</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <style>
-        :root {
-            --color-primary: #191d2b;
-            --color-secondary: #27AE60;
-            --color-white: #ffffff;
-            --color-black: #000;
-            --color-grey0: #f8f8f8;
-            --color-grey-1: #dbe1e8;
-            --color-grey-2: #b2becd;
-            --color-grey-3: #6c7983;
-            --color-grey-4: #454e56;
-            --color-grey-5: #2a2e35;
-            --color-grey-6: #12181b;
-            --br-sm-2: 14px;
-            --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
-        }
+    <link rel="stylesheet" href="styles.css">  
 
-        body {
-            background-color: var(--color-primary);
-            font-family: "Poppins", sans-serif;
-            font-size: 1.1rem;
-            color: var(--color-white);
-            transition: all 0.4s ease-in-out;
-        }
-
-        a {
-            display: inline-block;
-            text-decoration: none;
-            color: inherit;
-            font-family: inherit;
-        }
-
-        /* Navbar styles */
-        .navbar {
-            background-color: var(--color-grey-5);
-            border-bottom: 2px solid var(--color-secondary);
-        }
-        .navbar-brand, .nav-link {
-            color: var(--color-white) !important;
-        }
-        .nav-link:hover {
-            color: var(--color-secondary) !important;
-        }
-    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
-            <a class="navbar-brand" href="home.html">Home</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="home.html" style="font-weight: bold;">Home</a>
+            <!-- Navbar toggler button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -66,7 +26,7 @@
                         <a class="nav-link" href="project2.html">Project 2</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="project3.html" style="font-weight: bold;">Project 3</a>
+                        <a class="nav-link" href="project3.html">Project 3</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="UserAgreement.html">User Agreement</a>
@@ -83,8 +43,8 @@
             <a href="g1_project3_bug_tracker_vfinal.zip" class="btn btn-primary">Download Bug Tracker</a>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
