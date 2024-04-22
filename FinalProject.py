@@ -1,3 +1,4 @@
+
 import pygame
 import random
 
@@ -228,6 +229,9 @@ class SnakeGame:
                     quit()
                 elif event.type == pygame.MOUSEBUTTONDOWN:
                     if self.start_button.is_over(pygame.mouse.get_pos()):
+                        start = True
+                elif event.type == pygame.KEYUP:  
+                    if event.key == pygame.K_SPACE:  
                         start = True
             self.screen.fill((0, 200, 0))
             self.draw_text("SNAKE GAME", (255, 255, 255), self.width // 2, self.height // 2 - 50, size=50)
