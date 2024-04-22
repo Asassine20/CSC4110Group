@@ -16,6 +16,36 @@ class Background:
                 rect = pygame.Rect(x, y, block_size, block_size)
                 pygame.draw.rect(self.screen, colors[((x//block_size % 2) + (y//block_size % 2)) % 2], rect)
 
+class Button:
+    def __init__(self, color, x, y, width, height, text='', toggleable=False):
+        self.color = color
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.text = text
+        self.toggleable = toggleable
+        self.toggled = False
+
+    def draw(self, screen, outline=None):
+        if outline:
+            pygame.draw.rect(screen, outline, (self.x-2, self.y-2, self.width+4, self.height+4), 0)
+        pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height), 0)
+        if self.text != '':
+            font = pygame.font.SysFont('comicsans', 30)
+            text = font.render(self.text, 1, (255, 255, 255))
+            screen.blit(text, (self.x + (self.width/2 - text.get_width()/2), self.y + (self.height/2 - text.get_height()/2)))
+
+    def is_over(self, pos):
+        if self.x < pos[0] < self.x + self.width:
+            if self.y < pos[1] < self.y + self.height:
+                return True
+        return False
+
+    def toggle(self):
+        if self.toggleable:
+            self.toggled = not self.toggled
+
 class SnakeGame:
     SEGMENT_SIZE = 20
     DELAY = 0.1
@@ -35,8 +65,15 @@ class SnakeGame:
         # Play background music to infinitely loop
         pygame.mixer.music.play(loops=-1)
 
+        self.music_paused = False
+        self.sfx_paused = False
+
         self.width = 600
         self.height = 600
+        self.score_screen = pygame.Surface((self.width, 40))
+        self.score_screen.fill((0, 0, 0))  # Fill it with black color
+
+        #self.height -= 100
         self.screen = pygame.display.set_mode((self.width, self.height))
         pygame.display.set_caption('Snake Game')
         self.clock = pygame.time.Clock()
@@ -53,18 +90,25 @@ class SnakeGame:
         self.food = self.create_food()
         self.game_over = False
 
+        self.pause_button = Button((255, 0, 0), 20, 5, 70, 30, 'Pause')
+        self.reset_button = Button((255, 0, 0), self.width // 2 - 50, self.height // 2 - 100, 100, 50, 'Reset')
+        self.quit_button = Button((255, 0, 0), self.width // 2 - 50, self.height // 2 + 80, 100, 50, 'Quit')
+
+        # Create buttons for toggling music and SFX
+        self.music_button = Button((255, 0, 0), self.width // 2 - 100, self.height // 2 - 40, 200, 50, 'Toggle Music', toggleable=True)
+        self.sfx_button = Button((255, 0, 0), self.width // 2 - 100, self.height // 2 + 20, 200, 50, 'Toggle SFX', toggleable=True)
 
     def create_food(self):
         while True:
-            food = [random.randrange(0, self.width - self.SEGMENT_SIZE, self.SEGMENT_SIZE),
-                    random.randrange(0, self.height - self.SEGMENT_SIZE, self.SEGMENT_SIZE)]
+            food = [random.randrange(20, self.width - self.SEGMENT_SIZE - 20, self.SEGMENT_SIZE),
+                    random.randrange(60, self.height - self.SEGMENT_SIZE - 20, self.SEGMENT_SIZE)]
             if food not in self.segments and food != self.head:
                 return food
             
-    def draw_text(self, text, color, x, y):
-        surface = self.font.render(text, True, color)
-        rect = surface.get_rect(center=(x, y))  # Get a rect with the center at the given position
-        self.screen.blit(surface, rect)
+    def draw_text(self, text, color, x, y, surface=None):
+        text_surface = self.font.render(text, True, color)
+        rect = text_surface.get_rect(center=(x, y))  # Get a rect with the center at the given position
+        (surface if surface is not None else self.screen).blit(text_surface, rect)
 
     def draw_segment(self, color, pos):
         pygame.draw.rect(self.screen, color, (pos[0], pos[1], self.SEGMENT_SIZE, self.SEGMENT_SIZE))
@@ -86,17 +130,24 @@ class SnakeGame:
             self.head = new_head
 
     def check_collision(self):
-        if self.head[0] < 0 or self.head[0] >= self.width or self.head[1] < 0 or self.head[1] >= self.height or self.head in self.segments:
-            # Play losing sound effect
-            self.losing_sound.play()
+        # Check if the snake has hit the score board
+        if self.head[1] < 40:
+            if not self.sfx_paused:
+                self.losing_sound.play()
             self.game_over = True
-            # Stop the background music when player loses
+            pygame.mixer.music.stop()
+        # Check if the snake has hit the edge of the screen or itself
+        elif self.head[0] < 0 or self.head[0] >= self.width or self.head[1] < 40 or self.head[1] >= self.height or self.head in self.segments:
+            if not self.sfx_paused:
+                self.losing_sound.play()
+            self.game_over = True
             pygame.mixer.music.stop()
 
     def update_score(self):
         if self.head == self.food:
             # Play level up sound effect
-            self.level_up_sound.play()
+            if not self.sfx_paused:
+                self.level_up_sound.play()
             self.food = self.create_food()
             self.score += 10
             if self.score > self.high_score:
@@ -111,9 +162,21 @@ class SnakeGame:
         self.segments.clear()
         self.score = 0
         self.game_over = False
-        # Start background music again when the game resets
-        pygame.mixer.music.play(loops=-1)
+        if not self.music_paused:
+            pygame.mixer.music.play(loops=-1)
+        
 
+
+
+    def update_score_screen(self):
+        # Clear the score screen
+        self.score_screen.fill((0, 0, 0))
+
+        # Draw the score and high score
+        self.draw_text("Score: " + str(self.score) + "  High Score: " + str(self.high_score), (255, 255, 255), 300, 25, self.score_screen)
+
+        # Draw the pause button
+        self.pause_button.draw(self.score_screen, (0, 0, 0))
 
     def update_screen(self):
         # Draw the checkered background
@@ -130,7 +193,9 @@ class SnakeGame:
         pygame.draw.circle(self.screen, (255, 0, 0), (self.food[0] + self.SEGMENT_SIZE // 2, self.food[1] + self.SEGMENT_SIZE // 2), self.SEGMENT_SIZE // 2)
 
         # Draw score
-        self.draw_text("Score: " + str(self.score) + "  High Score: " + str(self.high_score), (255, 255, 255), 300, 20)
+        #self.draw_text("Score: " + str(self.score) + "  High Score: " + str(self.high_score), (255, 255, 255), 300, 20)
+
+        self.screen.blit(self.score_screen, (0, 0))
 
         pygame.display.flip()
 
@@ -150,10 +215,26 @@ class SnakeGame:
                     if event.key == pygame.K_SPACE:  # Only continue if the space bar is pressed
                         waiting = False
 
+    def toggle_music(self):
+        self.music_paused = not self.music_paused
+        if self.music_paused:
+            pygame.mixer.music.pause()
+        else:
+            pygame.mixer.music.unpause()
+
+    def toggle_sfx(self):
+        if self.sfx_paused:
+            self.sfx_paused = False
+        else: 
+            self.sfx_paused = True
+
     def start(self):
         running = True
+        paused = False
         self.game_over = False
         move_counter = 0
+
+
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -167,16 +248,66 @@ class SnakeGame:
                         self.change_direction("left")
                     elif event.key == pygame.K_RIGHT:
                         self.change_direction("right")
+                    elif event.key == pygame.K_ESCAPE:  # Pause the game when ESC is pressed
+                        paused = not paused
+                elif event.type == pygame.MOUSEBUTTONDOWN:
+                    if self.pause_button.is_over(pygame.mouse.get_pos()):
+                        paused = not paused
+                    elif self.reset_button.is_over(pygame.mouse.get_pos()):
+                        self.reset_game()
+                        paused = False
+                    elif self.quit_button.is_over(pygame.mouse.get_pos()):  # Quit button
+                        running = False
 
-            if not self.game_over:
+                    elif self.music_button.is_over(pygame.mouse.get_pos()):  # Toggle music button
+                        self.toggle_music()
+                        if self.music_paused:
+                            pygame.mixer.music.pause()  
+                        else:
+                            pygame.mixer.music.play(loops=-1)
+
+                    elif self.sfx_button.is_over(pygame.mouse.get_pos()):  # Toggle SFX button
+                        self.toggle_sfx()
+
+                        
+                elif self.reset_button.is_over(pygame.mouse.get_pos()):  
+                    self.reset_button.color = (255, 0, 0)
+                elif self.music_button.is_over(pygame.mouse.get_pos()):  
+                    self.music_button.color = (255, 0, 0)
+                elif self.sfx_button.is_over(pygame.mouse.get_pos()):  
+                    self.sfx_button.color = (255, 0, 0)
+                elif self.quit_button.is_over(pygame.mouse.get_pos()):  
+                    self.quit_button.color = (255, 0, 0) 
+                else:
+                    self.reset_button.color = (200, 0, 0)
+                    if self.music_paused:
+                        self.music_button.color = (0, 0, 255)
+                    else:
+                        self.music_button.color = (200, 0, 0)
+                    if self.sfx_paused:
+                        self.sfx_button.color = (0, 0, 255)
+                    else:
+                        self.sfx_button.color = (200, 0, 0)
+                    self.quit_button.color = (200, 0, 0)
+
+            if not self.game_over and not paused:
                 # Only move the snake every 6 frames (for example)
                 if move_counter % 4 == 0:
                     self.move()
                     self.check_collision()
                     self.update_score()
 
+                self.update_score_screen()
                 self.update_screen()
                 self.clock.tick(60)  
+
+            elif paused:
+                self.draw_text("GAME PAUSED", (255, 255, 255), self.width // 2, self.height // 2 - 150)  
+                self.reset_button.draw(self.screen, (0, 0, 0))
+                self.music_button.draw(self.screen, (0, 0, 0))
+                self.sfx_button.draw(self.screen, (0, 0, 0))
+                self.quit_button.draw(self.screen, (0, 0, 0))
+                pygame.display.flip()  # Update the screen
 
             move_counter += 1
             if self.game_over:
@@ -184,7 +315,14 @@ class SnakeGame:
                 self.reset_game()
                 self.game_over = False
 
+            self.pause_button.draw(self.screen, (0, 0, 0))
+            if self.pause_button.is_over(pygame.mouse.get_pos()):
+                self.pause_button.color = (255, 0, 0)
+            else:
+                self.pause_button.color = (200, 0, 0)
+
         pygame.quit()
+
 
 
 
